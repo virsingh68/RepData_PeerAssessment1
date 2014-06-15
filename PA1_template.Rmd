@@ -18,9 +18,12 @@ median_setps_per_day<-median(activity_df$steps)
 total_setps<-sum(activity_df$steps)
 ````
 ## What is mean total number of steps taken per day? 
+```{r meanmedianperday, echo=TRUE}
+ddply(activity_df,.(date), summarize, mean=mean(steps),median=median(steps))[,c("date","mean","median")]
+```
 
-### Mean Value - `r mean_steps_per_day`
-### Median Value - `r median_setps_per_day`
+### Overall Mean Value - `r mean_steps_per_day`
+### Overall Median Value - `r median_setps_per_day`
 
 ## What is the average daily activity pattern?
 
